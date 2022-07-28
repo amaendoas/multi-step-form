@@ -3,9 +3,15 @@ export const theme = {
     DARK_800: "#14142B",
     DARK_700: "#4E4B66",
     DARK_600: "#6E7191",
+    DARK_500: "#A0A3BD",
 
-    WHITE: "#F4EDE8",
+    WHITE: "#FFFFFF",
     PRIMARY: "#8752F3",
-    SECONDARY: "#F3F1FF"
+    BG_PRIMARY: "rgba(135, 82, 243, .15)",
+    SECONDARY: "#F3F1FF",
+
+    LIGHT_400: "#D9DBE9",
+    LIGHT_300: "#EFF0F7",
+
   }
 }
