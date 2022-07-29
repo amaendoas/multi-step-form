@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 `
 
 export const Bar = styled.span`

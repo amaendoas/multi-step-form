@@ -4,10 +4,11 @@ type State = {
   currentStep: number,
   name: string,
   email: string,
+  phone: string,
   service: string,
   projectName: string,
   projectDescription: string,
-  budget: number 
+  budget: string
 }
 
 type Action = {
@@ -29,10 +30,11 @@ const initialData: State = {
   currentStep: 0,
   name: '',
   email: '',
+  phone: '',
   service: '',
   projectName: '',
   projectDescription: '',
-  budget: 0
+  budget: ''
 }
 
 const FormContext = createContext<ContextType | undefined>(undefined);
@@ -41,6 +43,7 @@ enum FormActions {
   setCurrentStep,
   setName,
   setEmail,
+  setPhone,
   setService,
   setProjectName,
   setProjectDescription,
@@ -55,6 +58,8 @@ function formReducer(state: State, action: Action) {
       return {...state, name: action.payload};
     case FormActions.setEmail:
       return {...state, email: action.payload};
+      case FormActions.setPhone:
+        return {...state, phone: action.payload};
     case FormActions.setService:
       return {...state, service: action.payload};
     case FormActions.setProjectName:

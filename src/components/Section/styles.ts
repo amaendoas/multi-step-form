@@ -6,10 +6,11 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5rem;
 `
 export const Page = styled.div`
   width: 70rem;
-  height: 60rem;
+  height: 55rem;
 `
 export const Title = styled.div`
   text-align: center;
@@ -28,10 +29,10 @@ export const Title = styled.div`
   }
 `
 export const Step = styled.div`
-  padding: 4rem;
+  padding: 4rem 7rem;
   border: 1px solid ${({theme}) => theme.COLORS.LIGHT_300};
   box-shadow: 0px 5px 16px rgba(8, 15, 52, 0.06);
   border-radius: 34px;
-  height: 80%;
+  height: 90%;
   width: 100%;
 `

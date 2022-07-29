@@ -1,16 +1,18 @@
-import { Component, ReactNode } from "react";
+import { ChangeEventHandler, Component, ReactNode } from "react";
 import { Container } from "./styles";
 
 type Props = {
   icon: any,
   type: any,
-  placeholder: string
+  placeholder: string,
+  value: string,
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export function Input({icon: Icon, type, placeholder}: Props) {
+export function Input({icon: Icon, type, placeholder, value, onChange}: Props) {
   return (
     <Container>
-      <input type={type} placeholder={placeholder}/>
+      <input type={type} placeholder={placeholder} value={value} onChange={onChange}/>
       {Icon && <Icon size={20}/>}
     </Container>
   )

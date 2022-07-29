@@ -1,12 +1,13 @@
 import { Container } from "./styles";
 
 type Props = {
-  title: string
+  title: string,
+  onClick:()=>void
 }
 
-export function ButtonOutline({ title }: Props) {
+export function ButtonOutline({ title, onClick }: Props) {
   return(
-    <Container>
+    <Container onClick={onClick}>
       {title}
     </Container>
   )

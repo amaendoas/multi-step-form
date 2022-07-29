@@ -4,11 +4,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `
 
-export const Buttons = styled.div`
-  width: 70rem;
-  display: flex;
-  justify-content: end;
-  margin-bottom: 5rem;
+export const  Success = styled.div`
+ text-align: center;
+
+ img {
+  width: 130px;
+  margin-bottom: 2rem;
+ }
 `

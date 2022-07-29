@@ -2,16 +2,22 @@ import { Container } from "./styles";
 
 type Props = {
   icon: any,
-  title: string
+  title: any,
+  name: string
 }
 
-export function Area({icon: Icon, title}: Props){
+export function Area({icon: Icon, title, name}: Props){
   return (
     <Container>
-      <span>
-      <Icon size={35}/>
-      </span>
-      {title}
+      <label htmlFor={title}>
+        <span>
+        <Icon/>
+        </span>
+        <input type="radio" id={title} name={name} value={title}/>
+        <p>
+        {title}
+        </p>
+      </label>
     </Container>
   )
 }

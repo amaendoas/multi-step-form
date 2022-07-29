@@ -21,7 +21,6 @@ export default createGlobalStyle`
   body, input, button, textarea {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
-    outline: none;
   }
 
   a {

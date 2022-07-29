@@ -1,4 +1,4 @@
-import { Container, Buttons } from './styles'
+import * as C from './styles'
 import { Button } from '../../components/Button'
 import { ButtonOutline } from '../../components/ButtonOutline'
 import { FiUser, FiMail, FiPhone } from 'react-icons/fi'
@@ -6,21 +6,80 @@ import { Input } from '../../components/Input'
 import { Section } from '../../components/Section'
 import { Guide } from '../../components/Guide'
 import { SectionTitle } from '../../components/SectionTitle'
+import { Footer } from '../../components/Footer'
+import { useNavigate } from 'react-router-dom';
+import { ChangeEvent, useEffect } from 'react'
+import { FormActions, useForm } from '../../contexts/FormContext'
 
 export function Step1() {
+  const navigate = useNavigate();
+  const { state, dispatch } = useForm()
+
+  function handleNextStep() {
+    navigate("/step2")
+  }
+
+  function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
+    dispatch({
+      type: FormActions.setName,
+      payload: e.target.value
+    })
+  }
+  function handleEmailChange(e: ChangeEvent<HTMLInputElement>) {
+    dispatch({
+      type: FormActions.setEmail,
+      payload: e.target.value
+    })
+  }
+
+  function handlePhoneChange(e: ChangeEvent<HTMLInputElement>) {
+    dispatch({
+      type: FormActions.setPhone,
+      payload: e.target.value
+    })
+  } 
+
+  useEffect(() => {
+    dispatch({
+      type: FormActions.setCurrentStep,
+      payload: 1
+    })
+  }, [])
+
+
   return (
-    <Container>
+    <C.Container>
       <Section>
         <Guide/>
         <SectionTitle title='Contact details' description='Tell us who are you and how to find you.'/>
-        <Input icon={FiUser} type="text" placeholder="Name"/>
-        <Input icon={FiMail} type="email" placeholder="Email address"/>
-        <Input icon={FiPhone} type="email" placeholder="Phone number"/>
+        <Input
+        icon={FiUser}
+        type="text"
+        value={state.name}
+        onChange={handleNameChange}
+        placeholder="Name"
+        />
+
+        <Input
+        icon={FiMail}
+        type="email"
+        value={state.email}
+        onChange={handleEmailChange}
+        placeholder="Email address"
+        />
+
+        <Input
+        icon={FiPhone}
+        type="email"
+        value={state.phone}
+        onChange={handlePhoneChange}
+        placeholder="Phone number"
+        />
       </Section>
-      <Buttons>
-        <ButtonOutline title='Previous Step'/>
-        <Button title='Next Step'/>
-      </Buttons>
-    </Container>
+      <C.Buttons>
+        <Button onClick={handleNextStep} title='Next Step' />
+      </C.Buttons>
+      <Footer/>              
+    </C.Container>
   )
 }
