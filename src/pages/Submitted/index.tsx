@@ -6,12 +6,24 @@ import { Button } from '../../components/Button'
 import SuccessImg from '../../assets/success.svg'
 import { Footer } from '../../components/Footer'
 import { useNavigate } from 'react-router'
+import { useEffect } from 'react'
+import { useForm } from '../../contexts/FormContext'
 
 export function Submitted() {
   const navigate = useNavigate()
+  const { state } = useForm()
+
   function handleNewQuote() {
     navigate("/")
   }
+
+  useEffect(() => {
+    if(state.name === '') {
+      navigate('/')
+    } else {
+      console.log(state)
+    }
+  }, [])
   return (
     <C.Container>
       <Section>

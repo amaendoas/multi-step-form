@@ -5,7 +5,12 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  div>span {
+  .step1, .step2 {
+    background-color: ${({theme}) => theme.COLORS.PRIMARY};
+    color: ${({theme}) => theme.COLORS.LIGHT_300};
+  }
+
+  label>span {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,4 +1,4 @@
-import { ChangeEventHandler, Component, ReactNode } from "react";
+import { ChangeEvent } from "react";
 import { Container } from "./styles";
 
 type Props = {

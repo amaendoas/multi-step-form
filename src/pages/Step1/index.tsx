@@ -19,7 +19,7 @@ export function Step1() {
     if(state.name !== '' && state.email !== '' && state.phone !== '') {
       navigate("/step2")
     } else {
-      alert("Preencha os dados!")
+      alert("Preencha todos os campos!")
     }
   }
 
@@ -29,6 +29,7 @@ export function Step1() {
       payload: e.target.value
     })
   }
+  
   function handleEmailChange(e: ChangeEvent<HTMLInputElement>) {
     dispatch({
       type: FormActions.setEmail,

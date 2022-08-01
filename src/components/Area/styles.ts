@@ -25,12 +25,12 @@ export const Container = styled.div`
     display: none;
   }
 
-  input:checked + span + label {
+  input:checked + label {
     border: 1px solid ${({ theme }) => theme.COLORS.PRIMARY};
     box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
   }
 
-  input:checked + span>svg {
+  input:checked + label>span>svg {
     color: ${({ theme }) => theme.COLORS.PRIMARY};
   }
 
@@ -44,14 +44,15 @@ export const Container = styled.div`
     cursor: pointer;
     padding-left: 3rem;
     transition: 0.4s;
+    
+    span>svg {
+     color: ${({ theme }) => theme.COLORS.PRIMARY};
+    }
   }
   
   :hover {
     border: 1px solid ${({theme}) => theme.COLORS.PRIMARY};
     box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
 
-    span>svg {
-     color: ${({ theme }) => theme.COLORS.PRIMARY};
-    }
   }
 `
