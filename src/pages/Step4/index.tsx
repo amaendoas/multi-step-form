@@ -6,7 +6,6 @@ import { Area } from '../../components/Area'
 import { Button } from '../../components/Button'
 import { ButtonOutline } from '../../components/ButtonOutline'
 import { MdOutlineRadioButtonUnchecked} from "react-icons/md"
-import {RiRadioButtonFill} from 'react-icons/ri'
 import { Footer } from '../../components/Footer'
 import { useNavigate } from 'react-router'
 

@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  label>span {
+  div>span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,10 +31,6 @@ export const  Services = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-
-  label:hover{
-    border: 1px solid ${({theme}) => theme.COLORS.PRIMARY};
-  }
 `
 
 export const Buttons = styled.div`

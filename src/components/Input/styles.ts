@@ -15,13 +15,32 @@ export const Container = styled.div`
     height: 100%;
     width: 100%;
     border: none;
+    border-radius: 15px;
     color: ${({theme}) => theme.COLORS.DARK_600};
   }
 
-  input:focus {
+  input:focus, input:hover {
     outline: 1px solid ${({theme}) => theme.COLORS.PRIMARY};
     border-radius: 15px;
     box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
+  }
+
+  input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;   
+  }
+  
+  input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+  
+  }
+
+  input:focus + svg {
+    color: ${({theme}) => theme.COLORS.PRIMARY};
+  }
+
+  input:hover + svg {
+    color: ${({theme}) => theme.COLORS.PRIMARY};
   }
 
   input::placeholder {

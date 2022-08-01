@@ -9,11 +9,11 @@ type Props = {
 export function Area({icon: Icon, title, name}: Props){
   return (
     <Container>
+      <input type="radio" id={title} name={name} value={title}/>
+      <span>
+      <Icon/>
+      </span>
       <label htmlFor={title}>
-        <span>
-        <Icon/>
-        </span>
-        <input type="radio" id={title} name={name} value={title}/>
         <p>
         {title}
         </p>

@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin-bottom: 3rem;
 `
 
-export const Bar = styled.span`
+export const Bar = styled.div`
   width: 120px;
   height: 6px;
   border-radius: 40px;
@@ -22,7 +22,7 @@ export const Steps = styled.div`
   justify-content: space-between;
 `
 
-export const Step = styled.span`
+export const Step = styled.div`
   background-color: ${({theme}) => theme.COLORS.LIGHT_300};
   color: ${({theme}) => theme.COLORS.DARK_600};
   display: flex;
@@ -34,7 +34,7 @@ export const Step = styled.span`
   cursor: pointer;
 `
 
-export const Divider = styled.span`
+export const Divider = styled.div`
   height: 0;
   width: 100%;
   border-bottom: 1px solid ${({theme}) => theme.COLORS.LIGHT_400};

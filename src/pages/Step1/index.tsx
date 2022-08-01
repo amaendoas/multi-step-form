@@ -16,7 +16,11 @@ export function Step1() {
   const { state, dispatch } = useForm()
 
   function handleNextStep() {
-    navigate("/step2")
+    if(state.name !== '' && state.email !== '' && state.phone !== '') {
+      navigate("/step2")
+    } else {
+      alert("Preencha os dados!")
+    }
   }
 
   function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
@@ -70,7 +74,7 @@ export function Step1() {
 
         <Input
         icon={FiPhone}
-        type="email"
+        type="number"
         value={state.phone}
         onChange={handlePhoneChange}
         placeholder="Phone number"

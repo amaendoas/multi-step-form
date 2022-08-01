@@ -12,28 +12,29 @@ export const  Budgets = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  label>span {
+  div>span {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  input:checked + span {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12.35' cy='12.35' r='12.35' fill='%238752F3'/%3E%3Ccircle cx='12.3504' cy='12.3504' r='4.85233' fill='white'/%3E%3C/svg%3E%0A");
   }
 
   svg {
     font-size: 2.5rem;
     position: absolute;
-    margin-left: 2rem;
     color: ${({theme}) => theme.COLORS.LIGHT_400};
-  }
-
-  label:hover{
-    border: 1px solid ${({theme}) => theme.COLORS.PRIMARY};
   }
 
   label>p {
     margin-left: 3.5rem;
   }
 `
-
 export const Buttons = styled.div`
   width: 70rem;
   display: flex;

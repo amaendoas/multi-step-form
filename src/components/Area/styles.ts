@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   color: ${({ theme }) => theme.COLORS.DARK_900};
   font-weight: 500;
-  gap: 1.5rem;
+  border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_300};
   box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
   height: 10rem;
   width: 25rem;
@@ -13,6 +13,26 @@ export const Container = styled.div`
   cursor: pointer;
   margin-bottom: 2.5rem;
   position: relative;
+
+  span {
+    position: absolute;
+    left: 20px;
+  }
+
+  input {
+    position: absolute;
+    left: 20px;
+    display: none;
+  }
+
+  input:checked + span + label {
+    border: 1px solid ${({ theme }) => theme.COLORS.PRIMARY};
+    box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
+  }
+
+  input:checked + span>svg {
+    color: ${({ theme }) => theme.COLORS.PRIMARY};
+  }
 
   label {
     width: 100%;
@@ -25,8 +45,13 @@ export const Container = styled.div`
     padding-left: 3rem;
     transition: 0.4s;
   }
+  
+  :hover {
+    border: 1px solid ${({theme}) => theme.COLORS.PRIMARY};
+    box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
 
-  .selected {
-    border: 1px solid ${({ theme }) => theme.COLORS.PRIMARY};
+    span>svg {
+     color: ${({ theme }) => theme.COLORS.PRIMARY};
+    }
   }
 `
