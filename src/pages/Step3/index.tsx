@@ -1,6 +1,5 @@
 import * as C from './styles'
 import { Section } from '../../components/Section'
-import { Guide } from '../../components/Guide'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
@@ -43,20 +42,15 @@ export function Step3() {
   }
 
   useEffect(() => {
-    if(state.name === '') {
-      navigate('/')
-    } else {
       dispatch({
         type: FormActions.setCurrentStep,
         payload: 3
       })
-    }
   }, [])
 
   return (
     <C.Container>
       <Section>
-        <Guide/>
         <SectionTitle title='What do you have in mind?' description='Tell us what we need to know about your project.'/>
         <Input
         icon={false}

@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
-import { Button } from "../Button";
-import { ButtonOutline } from "../ButtonOutline";
-import { Container, Title, Step, Page } from "./styles";
+import * as C from "./styles";
+import { Guide } from "../Guide"
 
 type Props = {
   children: ReactNode
@@ -9,16 +8,19 @@ type Props = {
 
 export function Section({children}: Props) {
   return (
-    <Container>
-      <Page>
-        <Title>
+    <C.Container>
+      <C.Page>
+        <C.Title>
           <h1>Get a project quote</h1>
           <p>Please fill the form below to receive a quote for your project. Feel free to add as much detail as needed.</p>
-        </Title>
-        <Step>
-          {children}
-        </Step>
-      </Page>
-    </Container>
+        </C.Title>
+        <C.Step>
+          <Guide/>
+          <C.Content>
+            {children}
+          </C.Content>
+        </C.Step>
+      </C.Page>
+    </C.Container>
   )
 }

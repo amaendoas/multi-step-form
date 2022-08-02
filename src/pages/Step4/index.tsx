@@ -1,7 +1,6 @@
 import * as C from './styles'
 import { Section } from '../../components/Section'
 import { SectionTitle } from '../../components/SectionTitle'
-import { Guide } from '../../components/Guide'
 import { Area } from '../../components/Area'
 import { Button } from '../../components/Button'
 import { ButtonOutline } from '../../components/ButtonOutline'
@@ -29,6 +28,8 @@ export function Step4() {
   function handleNextStep() {
     if(state.budget === '') {
       alert('Selecione um range de orçamento!')
+    } else if(state.name === '' || state.email === '' || state.phone === '' || state.service === '' || state.projectName === '' || state.projectDescription === '') {
+      alert('Ops! confira se você preencheu todos os dados para enviar sua proposta!')
     } else {
       const confirm = window.confirm('Tem certeza que quer enviar sua proposta?')
       
@@ -39,20 +40,15 @@ export function Step4() {
   }
 
   useEffect(() => {
-    if(state.name === '') {
-      navigate('/')
-    } else {
       dispatch({
         type: FormActions.setCurrentStep,
         payload: 4
       })
-    }
   }, [])
 
   return (
     <C.Container>
       <Section>
-        <Guide/>
         <SectionTitle
         title='What’s your project budget?' description='Please select the project budget range you have in mind.'/>
         <C.Budgets>

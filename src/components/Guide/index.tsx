@@ -1,23 +1,31 @@
-import { Container, Steps, Step, Bar, Divider } from "./styles";
+import * as C from "./styles";
 
-import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { useForm } from "../../contexts/FormContext";
+
 
 export function Guide() {
-  const navigate = useNavigate()
 
-  
   return (
-    <Container>
-      <Steps>
-      <Step className="step1">1</Step>
-      <Bar className="step2"/>
-      <Step className="step2">2</Step>
-      <Bar className="step3"/>
-      <Step className="step3">3</Step>
-      <Bar className="step4"/>
-      <Step className="step4">4</Step>
-      </Steps>
-      <Divider/>
-    </Container>
+    <C.Container>
+      <C.Steps>
+        <Link to="/">
+          <C.Step className="step1">1</C.Step>
+        </Link>
+        <C.Bar className="step2"/>
+        <Link to="/step2">
+          <C.Step className="step2">2</C.Step>
+        </Link>
+        <C.Bar className="step3"/>
+        <Link to="/step3">
+          <C.Step className="step3">3</C.Step>
+        </Link>
+        <C.Bar className="step4"/>
+        <Link to="/step4">
+          <C.Step className="step4">4</C.Step>
+        </Link>
+        </C.Steps>
+        <C.Divider/>
+    </C.Container>
   )
 }

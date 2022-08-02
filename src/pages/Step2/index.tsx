@@ -1,7 +1,6 @@
 import * as C from './styles'
 import { Button } from '../../components/Button'
 import { ButtonOutline } from '../../components/ButtonOutline'
-import { Guide } from '../../components/Guide'
 import { Section } from '../../components/Section'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Area } from '../../components/Area'
@@ -38,20 +37,15 @@ export function Step2() {
   } 
 
   useEffect(() => {
-    if(state.name === '') {
-      navigate('/')
-    } else {
       dispatch({
         type: FormActions.setCurrentStep,
         payload: 2
       })
-    }
   }, [])
 
   return (
     <C.Container>
       <Section>
-        <Guide/>
         <SectionTitle title='Our services' description='Please select which service you are interested in.'/>
         <C.Services>
         <Area
