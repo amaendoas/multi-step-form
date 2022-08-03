@@ -25,15 +25,17 @@ export function Step4() {
     navigate("/step3")
   }
 
-  function handleNextStep() {
+ async function handleSubmit() {
+
     if(state.budget === '') {
       alert('Selecione um range de orçamento!')
-    } else if(state.name === '' || state.email === '' || state.phone === '' || state.service === '' || state.projectName === '' || state.projectDescription === '') {
+    } else if(state.name === '' || state.email === '' || state.phone === 0 || state.service === '' || state.projectName === '' || state.projectDescription === '') {
       alert('Ops! confira se você preencheu todos os dados para enviar sua proposta!')
     } else {
       const confirm = window.confirm('Tem certeza que quer enviar sua proposta?')
       
       if(confirm) {
+        console.log(state)
         navigate("/submitted")
       }
     }
@@ -85,7 +87,7 @@ export function Step4() {
       <C.Buttons>
         <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
         <Button
-        onClick={handleNextStep}
+        onClick={handleSubmit}
         title='Submit'/>
       </C.Buttons>
       <Footer/>

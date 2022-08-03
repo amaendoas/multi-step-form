@@ -14,7 +14,7 @@ export function Step1() {
   const { state, dispatch } = useForm()
 
   function handleNextStep() {
-    if(state.name !== '' && state.email !== '' && state.phone !== '') {
+    if(state.name !== '' && state.email !== '' && state.phone !== 0) {
       navigate("/step2")
     } else {
       alert("Preencha todos os campos!")
@@ -40,7 +40,7 @@ export function Step1() {
       type: FormActions.setPhone,
       payload: e.target.value
     })
-  } 
+  }
 
   useEffect(() => {
     dispatch({
