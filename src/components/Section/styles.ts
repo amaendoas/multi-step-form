@@ -4,13 +4,22 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+
+  span>a {
+    display: flex;
+    font-weight: 700;
+    gap: 8px;
+    align-items: center;
+    color: ${({theme}) => theme.COLORS.PRIMARY};
+  }
 `
 export const Page = styled.div`
   width: 70rem;
   height: 55rem;
+
 `
 export const Title = styled.div`
   text-align: center;

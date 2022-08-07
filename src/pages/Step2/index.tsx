@@ -2,6 +2,7 @@ import * as C from './styles'
 import { Button } from '../../components/Button'
 import { ButtonOutline } from '../../components/ButtonOutline'
 import { Section } from '../../components/Section'
+import { Header } from '../../components/Header'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Area } from '../../components/Area'
 import { BiTerminal } from 'react-icons/bi'
@@ -18,7 +19,7 @@ export function Step2() {
   const { state, dispatch } = useForm()
 
   function handlePreviousStep() {
-    navigate("/")
+    navigate("/step1")
   }
 
   function handleNextStep() {
@@ -45,47 +46,50 @@ export function Step2() {
 
   return (
     <C.Container>
-      <Section>
-        <SectionTitle title='Our services' description='Please select which service you are interested in.'/>
-        <C.Services>
-        <Area
-        name="services"
-        icon={BiTerminal}
-        value='Development'
-        onChange={handleServiceChange}
-        checked={state.service === 'Development'}
-        />
+      <Header/>
+      <C.Main>
+        <Section>
+          <SectionTitle title='Our services' description='Please select which service you are interested in.'/>
+          <C.Services>
+          <Area
+          name="services"
+          icon={BiTerminal}
+          value='Development'
+          onChange={handleServiceChange}
+          checked={state.service === 'Development'}
+          />
 
-        <Area
-        name="services"
-        icon={MdOutlineWeb}
-        value='Web Design'
-        onChange={handleServiceChange}
-        checked={state.service === 'Web Design'}
-        />
+          <Area
+          name="services"
+          icon={MdOutlineWeb}
+          value='Web Design'
+          onChange={handleServiceChange}
+          checked={state.service === 'Web Design'}
+          />
 
-        <Area name="services"
-        icon={BsMegaphone}
-        value='Marketing'
-        onChange={handleServiceChange}
-        checked={state.service === 'Marketing'}
-        />
+          <Area name="services"
+          icon={BsMegaphone}
+          value='Marketing'
+          onChange={handleServiceChange}
+          checked={state.service === 'Marketing'}
+          />
 
-        <Area
-        name="services"
-        icon={FiSettings}
-        value='Other'
-        onChange={handleServiceChange}
-        checked={state.service === 'Other'}
-        />
-        </C.Services>
-      </Section>
-      <C.Buttons>
-        <ButtonOutline
-        onClick={handlePreviousStep} title='Previous Step'/>
-        <Button onClick={handleNextStep} title='Next Step'/>
-      </C.Buttons>
-      <Footer/>
+          <Area
+          name="services"
+          icon={FiSettings}
+          value='Other'
+          onChange={handleServiceChange}
+          checked={state.service === 'Other'}
+          />
+          </C.Services>
+        </Section>
+        <C.Buttons>
+          <ButtonOutline
+          onClick={handlePreviousStep} title='Previous Step'/>
+          <Button onClick={handleNextStep} title='Next Step'/>
+        </C.Buttons>
+      </C.Main>
+        <Footer/>
     </C.Container>
   )
 }

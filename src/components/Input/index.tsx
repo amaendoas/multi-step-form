@@ -5,7 +5,7 @@ type Props = {
   icon: any,
   type: any,
   placeholder: string,
-  value: string | number,
+  value: string | number | undefined,
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 

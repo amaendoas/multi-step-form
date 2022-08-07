@@ -4,6 +4,7 @@ import { FiUser, FiMail, FiPhone } from 'react-icons/fi'
 import { Input } from '../../components/Input'
 import { Section } from '../../components/Section'
 import { SectionTitle } from '../../components/SectionTitle'
+import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, useEffect } from 'react'
@@ -14,7 +15,7 @@ export function Step1() {
   const { state, dispatch } = useForm()
 
   function handleNextStep() {
-    if(state.name !== '' && state.email !== '' && state.phone !== 0) {
+    if(state.name !== '' && state.email !== '' && state.phone !== undefined) {
       navigate("/step2")
     } else {
       alert("Preencha todos os campos!")
@@ -52,35 +53,38 @@ export function Step1() {
 
   return (
     <C.Container>
-      <Section>
-        <SectionTitle title='Contact details' description='Tell us who are you and how to find you.'/>
-        <Input
-        icon={FiUser}
-        type="text"
-        value={state.name}
-        onChange={handleNameChange}
-        placeholder="Name"
-        />
+      <Header/>
+      <C.Main>
+        <Section>
+          <SectionTitle title='Contact details' description='Tell us who are you and how to find you.'/>
+          <Input
+          icon={FiUser}
+          type="text"
+          value={state.name}
+          onChange={handleNameChange}
+          placeholder="Name"
+          />
 
-        <Input
-        icon={FiMail}
-        type="email"
-        value={state.email}
-        onChange={handleEmailChange}
-        placeholder="Email address"
-        />
+          <Input
+          icon={FiMail}
+          type="email"
+          value={state.email}
+          onChange={handleEmailChange}
+          placeholder="Email address"
+          />
 
-        <Input
-        icon={FiPhone}
-        type="number"
-        value={state.phone}
-        onChange={handlePhoneChange}
-        placeholder="Phone number"
-        />
-      </Section>
-      <C.Buttons>
-        <Button onClick={handleNextStep} title='Next Step' />
-      </C.Buttons>
+          <Input
+          icon={FiPhone}
+          type="number"
+          value={state.phone}
+          onChange={handlePhoneChange}
+          placeholder="Phone number"
+          />
+        </Section>
+        <C.Buttons>
+          <Button onClick={handleNextStep} title='Next Step' />
+        </C.Buttons>
+      </C.Main>
       <Footer/>              
     </C.Container>
   )

@@ -9,7 +9,7 @@ export function Guide() {
   return (
     <C.Container>
       <C.Steps>
-        <Link to="/">
+        <Link to="/step1">
           <C.Step className="step1">1</C.Step>
         </Link>
         <C.Bar className="step2"/>
