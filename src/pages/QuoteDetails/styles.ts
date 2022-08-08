@@ -33,6 +33,12 @@ export const Info = styled.div`
   width: 100%;
 `
 
+export const Quote = styled.div`
+  h1 {
+    margin-bottom: 10px;
+  }
+`
+
 export const Header =styled.div`
   width: 100%;
   display: flex;

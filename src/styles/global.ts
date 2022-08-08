@@ -32,6 +32,10 @@ export default createGlobalStyle`
     transition: transform 0.3s;
   }
 
+  ul {
+    list-style: none;
+  }
+
   button:hover, a:hover {
     transform: translateY(-3px)
     }

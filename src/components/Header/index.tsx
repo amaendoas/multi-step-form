@@ -8,7 +8,7 @@ export function Header() {
   const navigate = useNavigate()
 
   function handleSearch() {
-    navigate("/search")
+    navigate("/quotes")
   }
   return (
     <C.Container>

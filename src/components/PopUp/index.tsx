@@ -1,40 +1,36 @@
 import * as C from "./styles"
-import warningImg from "../../assets/warning.svg"
 import { Button } from "../Button"
 import { ButtonOutline } from "../ButtonOutline"
-import { useNavigate } from "react-router"
+import { IoIosClose } from "react-icons/io"
 
 type Props = {
   children: any,
   title: string,
   description: string,
-  trigger: boolean
+  trigger: boolean,
+  onClick: () => void,
+  setTrigger: any,
+  img: any,
+  buttonTitle: string
 }
 
-export function PopUp({children, title,description, trigger}: Props) {
-  const navigate = useNavigate()
-  function handleClose() {
-
-  }
-  function handleSubmit() {
-    navigate("/submitted")
-  }
+export function PopUp({children, title,description, trigger, onClick, setTrigger, img, buttonTitle}: Props) {
   return (trigger ? (
     <C.Container>
       <C.PopUp>
-        <img src={warningImg} alt="warning" />
+        <button
+        className="close"
+        onClick={() => setTrigger(false)}
+        ><IoIosClose/></button>
+        <img src={img} alt="warning" />
         <C.Content>
           <h2>{title}</h2>
           <p>{description}</p>
           {children}
         <C.Buttons>
-          <ButtonOutline
-          title="Cancel"
-          onClick={handleClose}
-          />
           <Button
-          title="Submit"
-          onClick={handleSubmit}
+          title={buttonTitle}
+          onClick={onClick}
           />
         </C.Buttons>
         </C.Content>

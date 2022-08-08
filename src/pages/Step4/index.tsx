@@ -8,12 +8,17 @@ import { MdOutlineRadioButtonUnchecked} from "react-icons/md"
 import { Theme } from '../../components/Theme'
 import { useNavigate } from 'react-router'
 import { FormActions, useForm } from '../../contexts/FormContext'
-import { ChangeEvent, useEffect } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { PopUp } from '../../components/PopUp'
+import warningImg from "../../assets/warning.svg"
+import successImg from '../../assets/success.svg'
+import { api } from '../../services/api'
 
 export function Step4() {
   const navigate = useNavigate()
   const { state, dispatch } = useForm()
+  const [popupSubmit, setPopupSubmit] = useState(false)
+  const [popupSubmitted, setPopupSubmitted ] = useState(false)
 
   function handleBudgetChange(e: ChangeEvent<HTMLInputElement>) {
     dispatch({
@@ -26,28 +31,58 @@ export function Step4() {
     navigate("/step3")
   }
 
- async function handleSubmit() {
-
+ async function handleNextStep() {
     if(state.budget === '') {
       alert('Selecione um range de orçamento!')
     } else if(state.name === '' || state.email === '' || state.phone === 0 || state.service === '' || state.projectName === '' || state.projectDescription === '') {
       alert('Ops! confira se você preencheu todos os dados para enviar sua proposta!')
     } else {
-      const confirm = window.confirm('Tem certeza que quer enviar sua proposta?')
-      
-      if(confirm) {
-        console.log(state)
-        navigate("/submitted")
+      setPopupSubmit(true)
+      let timestamp = new Date().toLocaleDateString();
+      dispatch({
+        type: FormActions.setCreatedAt,
+        payload: timestamp
+      })
+    }
+  }
+
+  function handleSubmit() {
+    setPopupSubmit(false)
+    setPopupSubmitted(true)
+    try {
+      api.post("/quotes", state)
+    } catch(error: any) {
+      if(error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert("Não foi possível cadastrar")
       }
     }
   }
 
-  useEffect(() => {
+  function handleNewQuote() {
       dispatch({
-        type: FormActions.setCurrentStep,
-        payload: 4
+        type: FormActions.setService,
+        payload: ''
       })
-  }, [])
+  
+      dispatch({
+        type: FormActions.setProjectName,
+        payload: ''
+      })
+  
+      dispatch({
+        type: FormActions.setProjectDescription,
+        payload: ''
+      })
+  
+      dispatch({
+        type: FormActions.setBudget,
+        payload: '',
+      })
+  
+      navigate("/step1")
+  }
 
   return (
     <Theme>
@@ -89,10 +124,34 @@ export function Step4() {
       <C.Buttons>
         <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
         <Button
-        onClick={handleSubmit}
+        onClick={handleNextStep}
         title='Submit'/>
       </C.Buttons>
     </C.Container>
+    <PopUp
+      title="Would you like to submit?"
+      description="Make sure you answered all the steps correctly"
+      trigger={popupSubmit}
+      setTrigger={setPopupSubmit}
+      onClick={handleSubmit}
+      img={warningImg}
+      buttonTitle="Submit"
+      >
+    </PopUp>
+    <PopUp
+      title="Your quote request is submitted!"
+      description="Thank you, our team is already working on your request. You will receive your project quote in 48 - 72 hours by e-mail."
+      trigger={popupSubmitted}
+      setTrigger={setPopupSubmitted}
+      onClick={handleNewQuote}
+      img={successImg}
+      buttonTitle="Get another quote"
+      >
+      <ButtonOutline
+      title='See my quotes'
+      onClick={() => navigate("/quotes")}
+      />
+    </PopUp>
     </Theme>
   )
 }

@@ -1,14 +1,14 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 
 type State = {
-  currentStep: number,
   name: string,
   email: string,
   phone: number | undefined,
   service: string,
   projectName: string,
   projectDescription: string,
-  budget: string
+  budget: string,
+  createdAt: any
 }
 
 type Action = {
@@ -27,33 +27,31 @@ type FormProviderProps = {
 
 
 const initialData: State = {
-  currentStep: 0,
   name: '',
   email: '',
   phone: undefined,
   service: '',
   projectName: '',
   projectDescription: '',
-  budget: ''
+  budget: '',
+  createdAt: '',
 }
 
 const FormContext = createContext<ContextType | undefined>(undefined);
 
 enum FormActions {
-  setCurrentStep,
   setName,
   setEmail,
   setPhone,
   setService,
   setProjectName,
   setProjectDescription,
-  setBudget
+  setBudget,
+  setCreatedAt
 }
 
 function formReducer(state: State, action: Action) {
   switch(action.type) {
-    case FormActions.setCurrentStep:
-      return {...state, currentStep: action.payload};
     case FormActions.setName:
       return {...state, name: action.payload};
     case FormActions.setEmail:
@@ -68,6 +66,8 @@ function formReducer(state: State, action: Action) {
       return {...state, projectDescription: action.payload};
     case FormActions.setBudget:
       return {...state, budget: action.payload};
+    case FormActions.setCreatedAt:
+      return {...state, createdAt: action.payload};
     default:
       return state
   }

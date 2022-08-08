@@ -5,9 +5,8 @@ import { Theme } from '../../components/Theme'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { ButtonOutline } from '../../components/ButtonOutline'
-import { Footer } from '../../components/Footer'
 import { useNavigate } from 'react-router'
-import { ChangeEvent, useEffect } from 'react'
+import { ChangeEvent } from 'react'
 import { FormActions, useForm } from '../../contexts/FormContext'
 import { TextArea } from '../../components/TextArea'
 
@@ -41,13 +40,6 @@ export function Step3() {
       payload: e.target.value
     })
   }
-
-  useEffect(() => {
-      dispatch({
-        type: FormActions.setCurrentStep,
-        payload: 3
-      })
-  }, [])
 
   return (
     <Theme>

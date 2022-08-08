@@ -2,16 +2,14 @@ import * as C from './styles'
 import { Button } from '../../components/Button'
 import { ButtonOutline } from '../../components/ButtonOutline'
 import { Section } from '../../components/Section'
-import { Header } from '../../components/Header'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Area } from '../../components/Area'
 import { BiTerminal } from 'react-icons/bi'
 import {MdOutlineWeb} from 'react-icons/md'
 import {BsMegaphone} from 'react-icons/bs'
 import {FiSettings} from 'react-icons/fi'
-import { Footer } from '../../components/Footer'
 import { useNavigate } from 'react-router'
-import { useEffect, ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 import { FormActions, useForm } from '../../contexts/FormContext'
 import { Theme } from '../../components/Theme'
 
@@ -36,14 +34,7 @@ export function Step2() {
       type: FormActions.setService,
       payload: e.target.value
     })
-  } 
-
-  useEffect(() => {
-      dispatch({
-        type: FormActions.setCurrentStep,
-        payload: 2
-      })
-  }, [])
+  }
 
   return (
     <Theme>

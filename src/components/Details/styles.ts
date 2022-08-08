@@ -11,6 +11,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 15px;
 
   a {
   padding: 1rem 2rem;
@@ -26,6 +27,10 @@ export const Content = styled.div`
   p {
     color: ${({theme}) => theme.COLORS.DARK_600};
     margin: 5px 0;
+    max-height: 2ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100rem;
   }
 
   footer {

@@ -14,6 +14,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-position: left bottom;
   background-attachment: fixed;
+  position: relative;
 `
 
 export const Main = styled.main`
