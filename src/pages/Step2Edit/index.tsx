@@ -8,22 +8,23 @@ import { BiTerminal } from 'react-icons/bi'
 import {MdOutlineWeb} from 'react-icons/md'
 import {BsMegaphone} from 'react-icons/bs'
 import {FiSettings} from 'react-icons/fi'
-import { useNavigate } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { ChangeEvent } from 'react'
 import { FormActions, useForm } from '../../contexts/FormContext'
 import { Theme } from '../../components/Theme'
 
-export function Step2() {
+export function Step2Edit() {
   const navigate = useNavigate()
   const { state, dispatch } = useForm()
+  const params = useParams()
 
   function handlePreviousStep() {
-    navigate("/step1")
+    navigate(`/step1/${params.id}`)
   }
 
   function handleNextStep() {
     if(state.service !== '') {
-      navigate("/step3")
+      navigate(`/step3/${params.id}`)
     } else {
       alert("Selecione um serviço!")
     }
@@ -35,7 +36,6 @@ export function Step2() {
       payload: e.target.value
     })
   }
-
 
   return (
     <Theme>

@@ -13,9 +13,11 @@ import { PopUp } from '../../components/PopUp'
 import warningImg from "../../assets/warning.svg"
 import successImg from '../../assets/success.svg'
 import { api } from '../../services/api'
+import { useParams } from 'react-router'
 
-export function Step4() {
+export function Step4Edit() {
   const navigate = useNavigate()
+  const params = useParams()
   const { state, dispatch } = useForm()
   const [popupSubmit, setPopupSubmit] = useState(false)
   const [popupSubmitted, setPopupSubmitted ] = useState(false)
@@ -28,7 +30,7 @@ export function Step4() {
   }
 
   function handlePreviousStep() {
-    navigate("/step3")
+    navigate(`/step3/${params.id}`)
   }
 
  async function handleNextStep() {
@@ -38,24 +40,19 @@ export function Step4() {
       alert('Ops! confira se você preencheu todos os dados para enviar sua proposta!')
     } else {
       setPopupSubmit(true)
-      let timestamp = new Date().toLocaleDateString();
-      dispatch({
-        type: FormActions.setCreatedAt,
-        payload: timestamp
-      })
     }
   }
 
-  function handleSubmit() {
+  function handleUpdate() {
     setPopupSubmit(false)
     setPopupSubmitted(true)
     try {
-      api.post("/quotes", state)
+      api.put(`/quotes/${params.id}`, state)
     } catch(error: any) {
       if(error.response) {
         alert(error.response.data.message)
       } else {
-        alert("Não foi possível cadastrar")
+        alert("Não foi possível atualizar")
       }
     }
   }
@@ -83,7 +80,17 @@ export function Step4() {
   
       navigate("/step1")
   }
-  
+
+  useEffect(() => {
+    let timestamp = new Date().toLocaleDateString();
+      dispatch({
+        type: FormActions.setCreatedAt,
+        payload: timestamp
+      })
+    console.log(state)
+  }, [])
+
+
   return (
     <Theme>
     <C.Container>
@@ -125,17 +132,17 @@ export function Step4() {
         <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
         <Button
         onClick={handleNextStep}
-        title='Submit'/>
+        title='Update'/>
       </C.Buttons>
     </C.Container>
     <PopUp
-      title="Would you like to submit?"
+      title="Would you like to update?"
       description="Make sure you answered all the steps correctly"
       trigger={popupSubmit}
       setTrigger={setPopupSubmit}
-      onClick={handleSubmit}
+      onClick={handleUpdate}
       img={warningImg}
-      buttonTitle="Submit"
+      buttonTitle="Update"
       >
     </PopUp>
     <PopUp

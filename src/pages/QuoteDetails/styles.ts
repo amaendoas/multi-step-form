@@ -35,8 +35,15 @@ export const Info = styled.div`
 
 export const Quote = styled.div`
   h1 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
+`
+
+export const Title = styled.div`
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 export const Header =styled.div`

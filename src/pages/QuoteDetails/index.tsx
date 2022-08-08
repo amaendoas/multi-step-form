@@ -7,18 +7,68 @@ import { useParams } from "react-router"
 import * as C from "./styles"
 import { useEffect, useState } from "react"
 import { api } from "../../services/api"
+import { FormActions, useForm } from "../../contexts/FormContext"
 
 export function QuoteDetails() {
   const [data, setData] = useState<any>(null)
+  const { state, dispatch } = useForm()
   const params = useParams()
   const navigate = useNavigate()
-  function handleCLick() {
-    navigate("/")
+  function handleEdit() {
+      navigate(`/step1/${params.id}`)
   }
+
+  async function handleDelete() {
+    try {
+      await api.delete(`/quotes/${params.id}`)
+      navigate("/quotes")
+    } catch(error: any) {
+      if(error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert("Não foi possível deletar")
+      }
+    }
+  }
+
   useEffect(() => {
     async function getQuote() {
       const response = await api.get(`/quotes/${params.id}`)
       setData(response.data)
+      dispatch({
+        type: FormActions.setName,
+        payload: response.data.name
+      })
+
+      dispatch({
+        type: FormActions.setEmail,
+        payload: response.data.email
+      })
+      
+      dispatch({
+        type: FormActions.setPhone,
+        payload: response.data.phone
+      })
+
+      dispatch({
+        type: FormActions.setService,
+        payload: response.data.service
+      })
+
+      dispatch({
+        type: FormActions.setBudget,
+        payload: response.data.budget
+      })
+
+      dispatch({
+        type: FormActions.setProjectName,
+        payload: response.data.projectName
+      })
+
+      dispatch({
+        type: FormActions.setProjectDescription,
+        payload: response.data.projectDescription
+      })
     }
     getQuote()
   }, [])
@@ -31,7 +81,13 @@ export function QuoteDetails() {
           />
           { data && 
           <C.Quote>
-            <h1>{data.projectName}</h1>
+            <C.Title>
+             <h1>{data.projectName}</h1>
+              <ButtonSecondary
+                title="Delete quote"
+                onClick={handleDelete}
+              />
+            </C.Title>
             <C.Info>
               <C.Header>
               <Status
@@ -40,7 +96,7 @@ export function QuoteDetails() {
                 />
               <ButtonSecondary
               title="Edit quote"
-              onClick={handleCLick}
+              onClick={handleEdit}
               />
               </C.Header>
               <C.Content>

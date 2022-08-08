@@ -37,7 +37,7 @@ export const Step = styled.div`
 `
 
 export const Content = styled.div`
-  animation: load 500ms backwards;
+  animation: load 500ms 400ms backwards;
   @keyframes load {
   0% {
     opacity: 0;

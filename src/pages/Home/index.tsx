@@ -10,6 +10,18 @@ export function Home() {
   const { state, dispatch } = useForm();
   useEffect(() => {
     dispatch({
+      type: FormActions.setName,
+      payload: ''
+    })
+    dispatch({
+      type: FormActions.setEmail,
+      payload: ''
+    })
+    dispatch({
+      type: FormActions.setPhone,
+      payload: ''
+    })
+    dispatch({
       type: FormActions.setService,
       payload: ''
     })

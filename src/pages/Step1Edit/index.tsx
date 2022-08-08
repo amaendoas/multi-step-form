@@ -4,18 +4,20 @@ import { FiUser, FiMail, FiPhone } from 'react-icons/fi'
 import { Input } from '../../components/Input'
 import { Section } from '../../components/Section'
 import { SectionTitle } from '../../components/SectionTitle'
-import { useNavigate } from 'react-router-dom';
-import { ChangeEvent, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
+import { ChangeEvent, useState } from 'react'
 import { FormActions, useForm } from '../../contexts/FormContext'
 import { Theme } from '../../components/Theme'
 
-export function Step1() {
+export function Step1Edit() {
+  const params = useParams()
   const navigate = useNavigate();
   const { state, dispatch } = useForm()
+  const [data, setData] = useState<any>(null)
 
   function handleNextStep() {
     if(state.name !== '' && state.email !== '' && state.phone !== undefined) {
-      navigate("/step2")
+      navigate(`/step2/${params.id}`)
     } else {
       alert("Preencha todos os campos!")
     }
@@ -41,29 +43,7 @@ export function Step1() {
       payload: e.target.value
     })
   }
-
-  useEffect(() => {
-    dispatch({
-      type: FormActions.setService,
-      payload: ''
-    })
-
-    dispatch({
-      type: FormActions.setProjectName,
-      payload: ''
-    })
-
-    dispatch({
-      type: FormActions.setProjectDescription,
-      payload: ''
-    })
-
-    dispatch({
-      type: FormActions.setBudget,
-      payload: '',
-    })
-  }, [])
-
+  
   return (
     <Theme>
       <C.Container>
