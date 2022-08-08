@@ -8,13 +8,13 @@ import { Footer } from '../../components/Footer'
 import { useNavigate } from 'react-router'
 import { useEffect } from 'react'
 import { useForm, FormActions } from '../../contexts/FormContext'
+import { Theme } from '../../components/Theme'
 
 export function Submitted() {
   const navigate = useNavigate()
   const { state, dispatch } = useForm()
 
   function handleNewQuote() {
-
     dispatch({
       type: FormActions.setService,
       payload: ''
@@ -46,9 +46,8 @@ export function Submitted() {
     }
   }, [])
   return (
-    <C.Container>
-      <Header/>
-      <C.Main>
+    <Theme>
+      <C.Container>
         <Section>
           <C.Success>
           <img src={SuccessImg} alt="success" />
@@ -57,8 +56,7 @@ export function Submitted() {
           <Button onClick={handleNewQuote} title='Get another quote'/>
           </C.Success>
         </Section>
-      </C.Main>
-      <Footer/>
-    </C.Container>
+      </C.Container>
+    </Theme>
   )
 }

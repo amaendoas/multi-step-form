@@ -20,9 +20,17 @@ export const Container = styled.div`
   color: ${({theme}) => theme.COLORS.PRIMARY};
   font-weight: 700;
 }
-
 `
 
 export const Content = styled.div`
+  p {
+    color: ${({theme}) => theme.COLORS.DARK_600};
+    margin: 5px 0;
+  }
 
+  footer {
+    font-size: 1.4rem;
+    display: flex;
+    gap: 10px;
+  }
 `

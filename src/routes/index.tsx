@@ -6,6 +6,7 @@ import { Step3 } from '../pages/Step3'
 import { Step4 } from '../pages/Step4'
 import { Submitted } from '../pages/Submitted'
 import { Search } from "../pages/Search";
+import { QuoteDetails } from "../pages/QuoteDetails";
 
 export function Router() {
   return (
@@ -13,6 +14,7 @@ export function Router() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/search" element={<Search/>} />
+        <Route path="/details" element={<QuoteDetails/>} />
         <Route path="/step1" element={<Step1/>} />
         <Route path="/step2" element={<Step2/>} />
         <Route path="/step3" element={<Step3/>} />

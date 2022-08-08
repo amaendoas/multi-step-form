@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
 import * as C from "./styles";
 import { Guide } from "../Guide"
-import { Link } from 'react-router-dom'
-import { AiOutlineArrowLeft } from "react-icons/ai"
+import { Back } from "../Back";
 
 type Props = {
   children: ReactNode
@@ -11,11 +10,10 @@ type Props = {
 export function Section({children}: Props) {
   return (
     <C.Container>
-        <span>
-        <Link to="/">
-        <AiOutlineArrowLeft/>
-          back to home</Link>
-        </span>
+      <Back
+      title="back to home"
+      path="/"
+      />
       <C.Page>
         <C.Title>
           <h1>Get a project quote</h1>

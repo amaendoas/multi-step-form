@@ -1,7 +1,7 @@
 import * as C from './styles'
 import { Section } from '../../components/Section'
 import { SectionTitle } from '../../components/SectionTitle'
-import { Header } from '../../components/Header'
+import { Theme } from '../../components/Theme'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { ButtonOutline } from '../../components/ButtonOutline'
@@ -50,31 +50,28 @@ export function Step3() {
   }, [])
 
   return (
+    <Theme>
     <C.Container>
-      <Header/>
-      <C.Main>
-        <Section>
-          <SectionTitle title='What do you have in mind?' description='Tell us what we need to know about your project.'/>
-          <Input
-          icon={false}
-          type="text"
-          placeholder="Project Name"
-          value={state.projectName}
-          onChange={handleProjectName}
-          />
-          <TextArea
-          value={state.projectDescription}
-          placeholder='Describe your project...'
-          onChange={handleProjectDescription}
-          />
-        </Section>
-        <C.Buttons>
-          <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
-          <Button onClick={handleNextStep} title='Next Step'/>
-        </C.Buttons>
-      </C.Main>
-      <Footer/>
-
+      <Section>
+        <SectionTitle title='What do you have in mind?' description='Tell us what we need to know about your project.'/>
+        <Input
+        icon={false}
+        type="text"
+        placeholder="Project Name"
+        value={state.projectName}
+        onChange={handleProjectName}
+        />
+        <TextArea
+        value={state.projectDescription}
+        placeholder='Describe your project...'
+        onChange={handleProjectDescription}
+        />
+      </Section>
+      <C.Buttons>
+        <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
+        <Button onClick={handleNextStep} title='Next Step'/>
+      </C.Buttons>
     </C.Container>
+    </Theme>
   )
 }

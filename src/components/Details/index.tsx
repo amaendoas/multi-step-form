@@ -1,21 +1,22 @@
 import * as C from "./styles"
 import { Link } from "react-router-dom"
 
+
 type Props = {
   title: string,
   button: string,
   description: string | null,
-  footer: any,
-  path: any
+  path: string,
+  children: any
 }
 
-export function Details({title, button, description, footer, path}: Props) {
+export function Details({title, button, description, path, children}: Props) {
   return (
     <C.Container>
       <C.Content>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         <p>{description}</p>
-        <footer>{footer}</footer>
+        <footer>{children}</footer>
       </C.Content>
       <Link to={path}>
       {button}

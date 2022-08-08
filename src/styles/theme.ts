@@ -13,5 +13,9 @@ export const theme = {
     LIGHT_400: "#D9DBE9",
     LIGHT_300: "#EFF0F7",
 
+    RED: "#AB222E",
+    ORANGE: "#FBA94C",
+    GREEN: "#04D361"
+
   }
 }

@@ -9,6 +9,7 @@ import { Footer } from '../../components/Footer'
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, useEffect } from 'react'
 import { FormActions, useForm } from '../../contexts/FormContext'
+import { Theme } from '../../components/Theme'
 
 export function Step1() {
   const navigate = useNavigate();
@@ -52,40 +53,38 @@ export function Step1() {
 
 
   return (
-    <C.Container>
-      <Header/>
-      <C.Main>
-        <Section>
-          <SectionTitle title='Contact details' description='Tell us who are you and how to find you.'/>
-          <Input
-          icon={FiUser}
-          type="text"
-          value={state.name}
-          onChange={handleNameChange}
-          placeholder="Name"
-          />
+    <Theme>
+      <C.Container>
+          <Section>
+            <SectionTitle title='Contact details' description='Tell us who are you and how to find you.'/>
+            <Input
+            icon={FiUser}
+            type="text"
+            value={state.name}
+            onChange={handleNameChange}
+            placeholder="Name"
+            />
 
-          <Input
-          icon={FiMail}
-          type="email"
-          value={state.email}
-          onChange={handleEmailChange}
-          placeholder="Email address"
-          />
+            <Input
+            icon={FiMail}
+            type="email"
+            value={state.email}
+            onChange={handleEmailChange}
+            placeholder="Email address"
+            />
 
-          <Input
-          icon={FiPhone}
-          type="number"
-          value={state.phone}
-          onChange={handlePhoneChange}
-          placeholder="Phone number"
-          />
-        </Section>
-        <C.Buttons>
-          <Button onClick={handleNextStep} title='Next Step' />
-        </C.Buttons>
-      </C.Main>
-      <Footer/>              
-    </C.Container>
+            <Input
+            icon={FiPhone}
+            type="number"
+            value={state.phone}
+            onChange={handlePhoneChange}
+            placeholder="Phone number"
+            />
+          </Section>
+          <C.Buttons>
+            <Button onClick={handleNextStep} title='Next Step' />
+          </C.Buttons>          
+      </C.Container>
+    </Theme>
   )
 }
