@@ -11,7 +11,7 @@ export function Section({children}: Props) {
   return (
     <C.Container>
       <Back
-      title="back to home"
+      title="back"
       path="/"
       />
       <C.Page>

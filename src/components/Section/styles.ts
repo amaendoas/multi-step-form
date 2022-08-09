@@ -4,10 +4,14 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   padding: 0 15rem;
+
+  @media (max-width: 1000px) {
+    padding: 0 1rem;
+  }
 `
 export const Page = styled.div`
-  width: 70rem;
-  height: 55rem;
+  width: clamp(30rem, 30rem + 50vw, 70rem);
+  height: clamp(26rem, 26rem + 50vw, 55rem);
   margin: 0 auto;
 `
 export const Title = styled.div`

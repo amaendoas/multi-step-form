@@ -4,8 +4,8 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: clamp(1rem, 1rem + 10vw, 3rem);
+  margin-bottom: clamp(1rem, 1rem + 10vw, 3rem);
 `
 
 export const Bar = styled.div`
@@ -28,8 +28,8 @@ export const Step = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
-  width: 34px;
+  height: clamp(15px, 20px + 10vw, 34px);
+  width: clamp(15px, 20px + 10vw, 34px);
   border-radius: 50%;
   cursor: pointer;
 `

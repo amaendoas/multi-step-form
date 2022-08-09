@@ -23,6 +23,12 @@ export const Title = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 650px) {
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+  }
 `
 
 export const Empty = styled.div`

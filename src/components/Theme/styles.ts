@@ -20,4 +20,8 @@ export const Container = styled.div`
 export const Main = styled.main`
   grid-area: content;
   padding: 2rem 15rem;
+
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
 `

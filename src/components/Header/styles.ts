@@ -8,4 +8,12 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 8rem;
+
+  @media (max-width: 500px) {
+    padding: 0rem 2.5rem;
+
+    img {
+      width: 12rem;
+    }
+  }
 `

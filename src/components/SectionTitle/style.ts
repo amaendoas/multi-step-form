@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   h2 {
     line-height: 35px;
+    font-size: clamp(1.2rem, 1.5rem + 10vw, 2.2rem);
   }
 
   p {

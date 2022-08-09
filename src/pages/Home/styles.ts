@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bgImg from "../../assets/Blob.png"
 
 export const Container = styled.div`
   height: 100vh;
@@ -31,6 +30,10 @@ export const Container = styled.div`
     max-width: 70rem;
     text-align: center;
     line-height: 25px;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 0 4rem;
   }
 
 `

@@ -21,6 +21,14 @@ export const Container = styled.div`
   color: ${({theme}) => theme.COLORS.PRIMARY};
   font-weight: 700;
 }
+
+@media (max-width: 800px) {
+  flex-direction: column;
+
+  h2 {
+    font-size: 2rem;
+  }
+}
 `
 
 export const Content = styled.div`

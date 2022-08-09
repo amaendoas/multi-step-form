@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  height: 5rem;
+  height: clamp(2rem, 3rem + 10vw, 5rem);
   box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
   border: 1px solid ${({theme}) => theme.COLORS.LIGHT_300};
   border-radius: 15px;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 1rem + 5vw, 2rem);
   position: relative;
 
   input {
