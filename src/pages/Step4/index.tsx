@@ -48,9 +48,9 @@ export function Step4() {
 
   function handleSubmit() {
     setPopupSubmit(false)
-    setPopupSubmitted(true)
     try {
       api.post("/quotes", state)
+      setPopupSubmitted(true)
     } catch(error: any) {
       if(error.response) {
         alert(error.response.data.message)
