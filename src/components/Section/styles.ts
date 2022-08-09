@@ -20,7 +20,7 @@ export const Title = styled.div`
 
   h1 {
     line-height: 46px;
-    color: ${({theme}) => theme.COLORS.DARK_900};
+    color: ${({theme}) => theme.COLORS.DARK_800};
     margin-bottom: 12px;
   }
 

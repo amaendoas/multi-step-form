@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.COLORS.DARK_900};
+  color: ${({ theme }) => theme.COLORS.DARK_800};
   font-weight: 500;
   border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_300};
   box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
