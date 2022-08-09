@@ -40,7 +40,15 @@ export function Step2() {
   return (
     <Theme>
     <C.Container>
-      <Section>
+      <Section
+      buttons={
+        <C.Buttons>
+        <ButtonOutline
+        onClick={handlePreviousStep} title='Previous Step'/>
+        <Button onClick={handleNextStep} title='Next Step'/>
+      </C.Buttons>
+      }
+      >
         <SectionTitle title='Our services' description='Please select which service you are interested in.'/>
         <C.Services>
         <Area
@@ -75,11 +83,6 @@ export function Step2() {
         />
         </C.Services>
       </Section>
-      <C.Buttons>
-        <ButtonOutline
-        onClick={handlePreviousStep} title='Previous Step'/>
-        <Button onClick={handleNextStep} title='Next Step'/>
-      </C.Buttons>
     </C.Container>
     </Theme>
   )

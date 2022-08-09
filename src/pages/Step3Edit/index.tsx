@@ -45,7 +45,14 @@ export function Step3Edit() {
   return (
     <Theme>
     <C.Container>
-      <Section>
+      <Section
+        buttons={
+          <C.Buttons>
+            <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
+            <Button onClick={handleNextStep} title='Next Step'/>
+          </C.Buttons>
+        }
+      >
         <SectionTitle title='What do you have in mind?' description='Tell us what we need to know about your project.'/>
         <Input
         icon={false}
@@ -60,10 +67,6 @@ export function Step3Edit() {
         onChange={handleProjectDescription}
         />
       </Section>
-      <C.Buttons>
-        <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
-        <Button onClick={handleNextStep} title='Next Step'/>
-      </C.Buttons>
     </C.Container>
     </Theme>
   )

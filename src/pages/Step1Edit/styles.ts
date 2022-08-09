@@ -10,11 +10,14 @@ export const Container = styled.div`
     background-color: ${({theme}) => theme.COLORS.PRIMARY};
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   }
+
+  @media (max-width: 700px) {
+    width: 100vw;
+  }
 `
 
 export const Buttons = styled.div`
-  width: 70rem;
+  width: 100%;
   display: flex;
   justify-content: end;
-  margin-bottom: 5rem;
 `

@@ -4,10 +4,11 @@ import { Guide } from "../Guide"
 import { Back } from "../Back";
 
 type Props = {
-  children: ReactNode
+  children: ReactNode,
+  buttons: ReactNode
 }
 
-export function Section({children}: Props) {
+export function Section({children, buttons}: Props) {
   return (
     <C.Container>
       <Back
@@ -25,6 +26,9 @@ export function Section({children}: Props) {
             {children}
           </C.Content>
         </C.Step>
+        <C.Footer>
+          {buttons}
+        </C.Footer>
       </C.Page>
     </C.Container>
   )

@@ -13,6 +13,11 @@ export const Bar = styled.div`
   height: 6px;
   border-radius: 40px;
   background-color: ${({theme}) => theme.COLORS.LIGHT_300};
+
+  @media (max-width: 800px) {
+    width: 60px;
+    height: 6px;
+  }
 `
 
 export const Steps = styled.div`
@@ -28,10 +33,15 @@ export const Step = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: clamp(15px, 20px + 10vw, 34px);
-  width: clamp(15px, 20px + 10vw, 34px);
+  height: 34px;
+  width: 34px;
   border-radius: 50%;
   cursor: pointer;
+
+  @media (max-width: 700px) {
+    height: 25px;
+    width: 25px;
+  }
 `
 
 export const Divider = styled.div`

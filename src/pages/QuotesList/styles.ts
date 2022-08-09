@@ -17,6 +17,10 @@ export const Container = styled.main`
       transform: translateY(0);
     }
   }
+
+  @media (max-width: 650px) {
+    padding: 0 2rem;
+  }
 `
 
 export const Title = styled.div`
@@ -25,9 +29,9 @@ export const Title = styled.div`
   justify-content: space-between;
 
   @media (max-width: 650px) {
-  flex-direction: column;
-  align-items: start;
-  gap: 8px;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
   }
 `
 

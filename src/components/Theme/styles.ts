@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 10.5rem auto 9rem;
+  grid-template-rows: 8rem auto 6rem;
   grid-template-areas:
   "header"
   "content"
@@ -19,7 +19,8 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   grid-area: content;
-  padding: 2rem 15rem;
+  padding: 0 15rem;
+  margin-bottom: 5rem;
 
   @media (max-width: 1000px) {
     padding: 0;

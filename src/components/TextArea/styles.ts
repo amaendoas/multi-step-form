@@ -28,4 +28,12 @@ export const Container = styled.div`
   textarea::placeholder {
     color: ${({theme}) => theme.COLORS.DARK_500};
   }
+
+  @media (max-width: 700px) {
+    margin-bottom: 1.4rem;
+
+    textarea::placeholder {
+      font-size: 1.5rem;
+    }
+  }
 `

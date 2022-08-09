@@ -7,7 +7,7 @@ export const Container = styled.div`
   box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
   border: 1px solid ${({theme}) => theme.COLORS.LIGHT_300};
   border-radius: 15px;
-  margin-bottom: clamp(1rem, 1rem + 5vw, 2rem);
+  margin-bottom: 2rem;
   position: relative;
 
   input {
@@ -51,5 +51,13 @@ export const Container = styled.div`
     position: absolute;
     right: 20px;
     color: ${({theme}) => theme.COLORS.DARK_500};
+  }
+
+  @media (max-width: 700px) {
+    margin-bottom: 1.4rem;
+
+    input::placeholder {
+    font-size: 1.5rem;
+  }
   }
 `

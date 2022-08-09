@@ -17,6 +17,10 @@ export const Container = styled.div`
       transform: translateY(0);
     }
   }
+
+  @media (max-width: 650px) {
+    padding: 0 2rem;
+  }
 `
 
 export const Info = styled.div`
@@ -31,6 +35,10 @@ export const Info = styled.div`
   border-radius: 18px;
   height: auto;
   width: 100%;
+
+  @media (max-width: 650px) {
+    padding: 3rem;
+  }
 `
 
 export const Quote = styled.div`
@@ -51,6 +59,10 @@ export const Header =styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 650px) {
+    margin-bottom: 10px;
+  }
 `
 
 export const Content = styled.div`
@@ -61,7 +73,6 @@ export const Content = styled.div`
 `
 
 export const Data = styled.div`
-  text-align: justify;
   line-height: 25px;
 
   h4 {

@@ -47,7 +47,13 @@ export function Step1Edit() {
   return (
     <Theme>
       <C.Container>
-          <Section>
+          <Section
+          buttons={
+            <C.Buttons>
+            <Button onClick={handleNextStep} title='Next Step' />
+          </C.Buttons> 
+          }
+          >
             <SectionTitle title='Contact details' description='Tell us who are you and how to find you.'/>
             <Input
             icon={FiUser}
@@ -72,10 +78,7 @@ export function Step1Edit() {
             onChange={handlePhoneChange}
             placeholder="Phone number"
             />
-          </Section>
-          <C.Buttons>
-            <Button onClick={handleNextStep} title='Next Step' />
-          </C.Buttons>          
+          </Section>         
       </C.Container>
     </Theme>
   )

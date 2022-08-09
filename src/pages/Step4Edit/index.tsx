@@ -94,7 +94,16 @@ export function Step4Edit() {
   return (
     <Theme>
     <C.Container>
-      <Section>
+      <Section
+      buttons={
+        <C.Buttons>
+          <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
+          <Button
+          onClick={handleNextStep}
+          title='Update'/>
+        </C.Buttons>
+      }
+      >
         <SectionTitle
         title='What’s your project budget?' description='Please select the project budget range you have in mind.'/>
         <C.Budgets>
@@ -128,12 +137,6 @@ export function Step4Edit() {
 
         </C.Budgets>
       </Section>
-      <C.Buttons>
-        <ButtonOutline onClick={handlePreviousStep} title='Previous Step'/>
-        <Button
-        onClick={handleNextStep}
-        title='Update'/>
-      </C.Buttons>
     </C.Container>
     <PopUp
       title="Would you like to update?"

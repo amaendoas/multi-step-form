@@ -9,4 +9,9 @@ export const Container = styled.button`
   color: ${({theme}) => theme.COLORS.WHITE};
   font-weight: 700;
   box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
+
+  @media (max-width: 650px) {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+  }
 `

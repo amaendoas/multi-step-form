@@ -42,32 +42,38 @@ export function Step1() {
     })
   }
 
-  useEffect(() => {
-    dispatch({
-      type: FormActions.setService,
-      payload: ''
-    })
+  // useEffect(() => {
+  //   dispatch({
+  //     type: FormActions.setService,
+  //     payload: ''
+  //   })
 
-    dispatch({
-      type: FormActions.setProjectName,
-      payload: ''
-    })
+  //   dispatch({
+  //     type: FormActions.setProjectName,
+  //     payload: ''
+  //   })
 
-    dispatch({
-      type: FormActions.setProjectDescription,
-      payload: ''
-    })
+  //   dispatch({
+  //     type: FormActions.setProjectDescription,
+  //     payload: ''
+  //   })
 
-    dispatch({
-      type: FormActions.setBudget,
-      payload: '',
-    })
-  }, [])
+  //   dispatch({
+  //     type: FormActions.setBudget,
+  //     payload: '',
+  //   })
+  // }, [])
 
   return (
     <Theme>
       <C.Container>
-          <Section>
+          <Section
+          buttons={
+            <C.Buttons>
+            <Button onClick={handleNextStep} title='Next Step' />
+            </C.Buttons> 
+          }
+          >
             <SectionTitle title='Contact details' description='Tell us who are you and how to find you.'/>
             <Input
             icon={FiUser}
@@ -91,11 +97,8 @@ export function Step1() {
             value={state.phone}
             onChange={handlePhoneChange}
             placeholder="Phone number"
-            />
+            />         
           </Section>
-          <C.Buttons>
-            <Button onClick={handleNextStep} title='Next Step' />
-          </C.Buttons>          
       </C.Container>
     </Theme>
   )

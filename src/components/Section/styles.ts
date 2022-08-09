@@ -10,9 +10,10 @@ export const Container = styled.div`
   }
 `
 export const Page = styled.div`
-  width: clamp(30rem, 30rem + 50vw, 70rem);
-  height: clamp(26rem, 26rem + 50vw, 55rem);
+  width: clamp(15rem, 15rem + 50vw, 70rem);
+  height: clamp(30rem, 30rem + 50vw, 55rem);
   margin: 0 auto;
+
 `
 export const Title = styled.div`
   text-align: center;
@@ -29,6 +30,19 @@ export const Title = styled.div`
     color: ${({theme}) => theme.COLORS.DARK_600};
     padding: 0 5rem;
   }
+
+  @media (max-width: 700px) {
+    margin: 2rem 0;
+     h1 {
+      font-size: 2.5rem;
+      margin: 0;
+     } 
+
+    p {
+      line-height: 25px;
+      padding: 0 1rem;
+    }
+  }
 `
 export const Step = styled.div`
   background-color: ${({theme}) => theme.COLORS.WHITE};
@@ -38,6 +52,10 @@ export const Step = styled.div`
   border-radius: 34px;
   height: 90%;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    padding: 2.2rem 1.5rem;
+  }
 `
 
 export const Content = styled.div`
@@ -53,5 +71,8 @@ export const Content = styled.div`
     transform: translateY(0);
   }
 }
+`
 
+export const Footer = styled.div`
+  margin-top: 2rem;
 `

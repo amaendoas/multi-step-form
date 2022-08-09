@@ -55,4 +55,15 @@ export const Container = styled.div`
     box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
 
   }
+
+  @media (max-width: 780px) {
+    margin-bottom: 1rem;
+    height: 9rem;
+    width: 15rem;
+
+    span {
+    position: absolute;
+    left: 6px;
+    }
+  }
 `

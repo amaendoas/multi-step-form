@@ -30,6 +30,23 @@ export const Container = styled.div`
     margin-left: 6.5rem;
   }
 
+  @media (max-width: 780px) {
+    width: 100vw;
+
+    label>span {
+      height: 40px;
+      width: 40px;
+     svg { 
+       font-size: 2.5rem;
+     }
+    }
+
+    label>p {
+    margin-left: 2rem;
+    font-size: 1.4rem;
+  }
+  }
+
 `
 
 export const  Services = styled.div`
@@ -40,7 +57,7 @@ export const  Services = styled.div`
 `
 
 export const Buttons = styled.div`
-  width: 70rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;

@@ -10,6 +10,10 @@ export const Container = styled.div`
     background-color: ${({theme}) => theme.COLORS.PRIMARY};
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   }
+
+  @media (max-width: 700px) {
+    width: 100vw;
+  }
 `
 
 export const  Budgets = styled.div`
@@ -40,9 +44,20 @@ export const  Budgets = styled.div`
   label p {
     margin-left: 3.5rem;
   }
+
+  @media (max-width: 770px) {
+    justify-content: space-between;
+
+    label p {
+      width: 65%;
+      margin-left: 0.6rem;
+      font-size: 1.6rem;
+      word-wrap: break-word;
+    }
+  }
 `
 export const Buttons = styled.div`
-  width: 70rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;

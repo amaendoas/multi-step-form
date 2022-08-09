@@ -30,10 +30,13 @@ export function QuotesList() {
         />
         <C.Title>
           <h1>Quotes list</h1>
-          <ButtonSecondary
-          title="Get a new quote"
-          onClick={() => navigate("/step1")}
-          />
+          {
+            quotes.length ? 
+            <ButtonSecondary
+            title="Get a new quote"
+            onClick={() => navigate("/step1")}
+            /> : <div></div>
+          }
         </C.Title>
         <ul>
 

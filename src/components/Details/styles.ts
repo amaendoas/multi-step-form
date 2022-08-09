@@ -24,6 +24,7 @@ export const Container = styled.div`
 
 @media (max-width: 800px) {
   flex-direction: column;
+  align-items: start;
 
   h2 {
     font-size: 2rem;
@@ -45,5 +46,13 @@ export const Content = styled.div`
     font-size: 1.4rem;
     display: flex;
     gap: 10px;
+  }
+
+  @media (max-width: 650px) {
+    footer {
+      flex-direction: column;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
   }
 `

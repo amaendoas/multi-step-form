@@ -8,4 +8,9 @@ export const Container = styled.button`
   background-color: ${({theme}) => theme.COLORS.WHITE};
   color: ${({theme}) => theme.COLORS.PRIMARY};
   font-weight: 700;
+
+  @media (max-width: 650px) {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+  }
 `
