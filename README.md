@@ -34,7 +34,7 @@ Para visualizar siga os passos abaixo:
 - Crie uma pasta em seu computador;
 - Abra o Git Bash dentro deste diretório;
 - Utilize o comando "git clone https://github.com/amaendoas/stepdev-frontend.git".
-- Para iniciar digite no terminal `npm run dev`
+- Abra o editor de código e digite no terminal `npm run dev`
 
 ---
 
@@ -53,6 +53,7 @@ Ferramentas utilizadas no desenvolvimento do projeto:
 
 - Layout do figma: <a href="https://www.figma.com/file/nFsXb6KCEg1UlO1Hq3AEKn/Step-Dev?node-id=1%3A5" >[Figma]</a> 
 - Deploy: https://stepdev1.web.app/
+- Repo do back-end: <a href="https://github.com/amaendoas/stepdev-backend"> [BackEnd]</a>
 
 ---
 
